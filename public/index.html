@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transaction Dashboard</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Notiflix -->
+    <script src="https://cdn.jsdelivr.net/npm/notiflix"></script>
+
+
+
+    <!-- Loader CSS -->
+    <style>
+        /* Page loader overlay */
+        #pageLoader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            flex-direction: column;
+        }
+
+        /* Spinner */
+        .spinner {
+            border: 3px solid #f3f3f3;
+            /* Light gray */
+            border-top: 3px solid #3498db;
+            /* Blue */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Page loader -->
+    <div id="pageLoader">
+        <div class="spinner"></div>
+        <p>Please Wait...</p>
+    </div>
+
+    <h1>Transaction Dashboard</h1>
+
+    <div class="button-row">
+        <button id="insertBtn">Insert Data</button>
+        <button id="showBtn">Show Data</button>
+    </div>
+
+    <div id="contentContainer" class="content-container"></div>
+    <!-- Main JS -->
+    <script src="script.js"></script>
+    <script>
+        // Wait until full page (images, CSS, JS) is loaded
+        window.addEventListener("load", function () {
+            const loader = document.getElementById("pageLoader");
+            loader.style.opacity = 1;
+            loader.style.transition = "opacity 0.5s ease";
+            loader.style.opacity = 0;
+            setTimeout(() => loader.remove(), 500); // remove from DOM
+        });
+    </script>
+</body>
+
+</html>

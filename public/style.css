@@ -1,0 +1,268 @@
+/* -------------------- General -------------------- */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f7fb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* -------------------- Button Row -------------------- */
+.button-row {
+    display: flex;
+    gap: 20px;
+    margin: 30px 0;
+    justify-content: center;
+}
+
+button {
+    padding: 15px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: #3498db;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #2980b9;
+    transform: scale(1.05);
+}
+
+/* -------------------- Content Container -------------------- */
+.content-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 50px;
+    overflow-x: hidden;
+}
+
+.content-container>div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 900px;
+}
+
+/* -------------------- Transaction Form -------------------- */
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 450px;
+    width: 100%;
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.form-container.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.form-container input,
+.form-container select,
+.form-container button,
+.form-container h2 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.5s forwards;
+}
+
+.form-container h2 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    animation-delay: 0.1s;
+}
+
+.form-container input#name {
+    animation-delay: 0.3s;
+}
+
+.form-container input#shopName {
+    animation-delay: 0.5s;
+}
+
+.form-container input#price {
+    animation-delay: 0.7s;
+}
+
+.form-container select#type {
+    animation-delay: 0.9s;
+}
+
+.form-container input#date {
+    animation-delay: 1.1s;
+}
+
+.form-container button {
+    animation-delay: 1.3s;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-container input,
+.form-container select,
+.form-container button {
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.form-container input:focus,
+.form-container select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.6);
+    outline: none;
+}
+
+.form-container button {
+    background: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background: #2980b9;
+    transform: scale(1.05);
+}
+
+/* -------------------- Table Styling -------------------- */
+.sheet-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    /* scroll only for small screens */
+    -webkit-overflow-scrolling: touch;
+    /* smooth scroll on mobile */
+}
+
+.sheet-table {
+    width: 100%;
+    min-width: 600px;
+    /* ensures scroll on very small screens */
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sheet-table th,
+.sheet-table td {
+    padding: 12px 18px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    color: #333;
+    white-space: nowrap;
+    /* prevent wrapping */
+}
+
+.sheet-table th {
+    background-color: #2c3e50;
+    color: #fff;
+    font-weight: 600;
+}
+
+.sheet-table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.sheet-table tbody tr:hover {
+    background-color: #f4f7fb;
+    cursor: default;
+}
+
+.sheet-table tbody tr {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.sheet-table tbody tr.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* -------------------- Responsive Styling -------------------- */
+@media (max-width: 900px) {
+    .sheet-table {
+        min-width: 500px;
+        font-size: 14px;
+    }
+
+    .sheet-table th,
+    .sheet-table td {
+        padding: 10px 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sheet-table {
+        min-width: 400px;
+        font-size: 13px;
+    }
+
+    .sheet-table th,
+    .sheet-table td {
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .sheet-table {
+        min-width: 350px;
+        font-size: 12px;
+    }
+
+    .sheet-table th,
+    .sheet-table td {
+        padding: 6px 8px;
+    }
+}

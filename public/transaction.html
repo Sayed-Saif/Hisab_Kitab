@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transaction Form</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Notiflix -->
+  <script src="https://cdn.jsdelivr.net/npm/notiflix"></script>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="form-wrapper">
+    <div class="form-container" id="formBox">
+      <h2 class="form-title">Transaction Report</h2>
+
+      <input type="text" id="name" placeholder="Name" required>
+      <input type="text" id="shopName" placeholder="Shop Name" required>
+      <input type="number" id="price" placeholder="Price (in Rs)" required>
+
+      <!-- Dropdown for Type -->
+      <select id="type" required>
+        <option value="">Select Type</option>
+        <option value="Debit">Debit</option>
+        <option value="Credit">Credit</option>
+      </select>
+
+      <!-- Date input -->
+      <input type="date" id="date" required>
+
+      <button id="submitBtn">Submit</button>
+    </div>
+  </div>
+
+  <!-- JS will be loaded dynamically from main script.js -->
+</body>
+
+</html>
