@@ -8,7 +8,9 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
   <!-- Notiflix -->
   <script src="https://cdn.jsdelivr.net/npm/notiflix"></script>
 
@@ -32,8 +34,10 @@
         <option value="Credit">Credit</option>
       </select>
 
-      <!-- Date input -->
-      <input type="date" id="date" required>
+      <div class="input-wrapper">
+        <input type="date" id="date">
+        <i class="fa-solid fa-calendar-days calendar-icon"></i>
+      </div>
 
       <button id="submitBtn">Submit</button>
     </div>
