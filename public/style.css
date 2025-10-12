@@ -230,6 +230,49 @@ button:hover {
     transform: translateY(0);
 }
 
+.input-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.input-wrapper input[type="date"] {
+    width: 100%;
+    padding: 10px 40px 10px 12px;
+    /* leave space for icon */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: white;
+}
+
+/* Hide the default calendar icon in some browsers */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* Position the Font Awesome calendar icon */
+.calendar-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
+    pointer-events: none;
+    /* allow clicks to go through to input */
+    font-size: 18px;
+}
+
+
+
 /* -------------------- Responsive Styling -------------------- */
 @media (max-width: 900px) {
     .sheet-table {
